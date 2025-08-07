@@ -1,2 +1,14 @@
-<h2>Welcome to Your Learning Tracker 📚</h2>
-<p>Start by adding your first learning goal.</p>
+<h2>📚 Learning Goal Tracker</h2>
+
+<button (click)="toggleForm()" style="margin-bottom: 10px;">Add New Goal</button>
+
+<div *ngIf="showForm">
+  <form (ngSubmit)="addGoal()">
+    <input [(ngModel)]="newGoalTitle" name="title" placeholder="Enter your learning goal" required>
+    <button type="submit">Save Goal</button>
+  </form>
+</div>
+
+<ul>
+  <li *ngFor="let goal of goals">{{ goal }}</li>
+</ul>
