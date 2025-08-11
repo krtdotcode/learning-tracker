@@ -1,8 +1,8 @@
 export interface Goal {
-    id: number;              // Unique identifier
+    id: number;
     title: string;
-    description?: string;    // Optional
-    deadline?: string;       // Format: yyyy-mm-dd
+    description?: string;
+    deadline: Date;
     isCompleted: boolean;
-    dateCreated: string;
+    dateCreated: Date;
 }

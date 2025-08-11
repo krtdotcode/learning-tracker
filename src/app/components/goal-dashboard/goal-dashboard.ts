@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Goal } from '../../models/goal.model';
+import { GoalService } from '../../services/goal.service';
 
 @Component({
   selector: 'app-goal-dashboard',
@@ -13,7 +14,13 @@ import { Goal } from '../../models/goal.model';
 export class GoalDashboard {
   goals: Goal[] = [];
   newGoalTitle: string = '';
+  newGoalDescription: string = '';
+  newGoalDeadline: string = '';
   showForm: boolean = false;
+
+  constructor(private goalService: GoalService) {
+    this.goals = this.goalService.getGoals();
+  }
 
   toggleForm() {
     this.showForm = !this.showForm;
@@ -21,16 +28,17 @@ export class GoalDashboard {
 
   addGoal() {
     if (this.newGoalTitle.trim()) {
-      const newGoal: Goal = {
-        id: Date.now(), // Simple unique ID
+      this.goalService.addGoal({
         title: this.newGoalTitle.trim(),
-        isCompleted: false,
-        dateCreated: new Date().toISOString()
-      };
-      this.goals.push(newGoal);
+        deadline: this.newGoalDeadline ? new Date(this.newGoalDeadline) : new Date()
+      });
       this.newGoalTitle = '';
+      this.newGoalDeadline = '';
       this.showForm = false;
     }
   }
 
+  removeGoal(index: number) {
+    this.goalService.removeGoal(index);
+  }
 }
