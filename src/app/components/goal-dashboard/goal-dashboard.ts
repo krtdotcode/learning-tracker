@@ -18,7 +18,9 @@ export class GoalDashboard {
   newGoalDeadline: string = '';
   showForm: boolean = false;
 
-  constructor(private goalService: GoalService) {
+  constructor(private goalService: GoalService) {}
+
+  ngOnInit() {
     this.goals = this.goalService.getGoals();
   }
 
@@ -38,7 +40,8 @@ export class GoalDashboard {
     }
   }
 
-  removeGoal(index: number) {
-    this.goalService.removeGoal(index);
+  removeGoal(id: number) {
+    this.goalService.removeGoal(id);
+    this.goals = this.goalService.getGoals();
   }
 }

@@ -13,7 +13,7 @@ export class GoalService {
 
     addGoal(goal: Partial<Goal>): void {
         const newGoal: Goal = {
-        id: Date.now(), // Unique number
+        id: Date.now(),
         title: goal.title || '',
         description: goal.description || '',
         deadline: goal.deadline ? new Date(goal.deadline) : new Date(),
