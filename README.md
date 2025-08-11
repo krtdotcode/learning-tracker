@@ -1,59 +1,35 @@
-# LearningTracker
+# 📚 Learning Tracker
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.0.
+A **personalized learning goal tracking app** built with **Angular 20**.  
+This app helps users set, manage, and track their learning goals, including deadlines and progress status.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Features (for now)
 
-```bash
-ng serve
-```
+- ➕ Add new learning goals with **title**, **optional description**, and **deadline**
+- 🗑 Remove goals
+- ✅ Mark goals as completed
+- 📅 Dates stored as actual `Date` objects for better date handling
+- 🛠 Modular, scalable Angular architecture using **services** and **models**
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🖥️ Tech Stack
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Angular 20**
+- **TypeScript**
+- **HTML / CSS**
+- Angular **Standalone Components**
+- Angular **Services** for data handling
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📦 Installation
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Clone the repository and install dependencies:
 
 ```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+git clone https://github.com/krtdotcode/learning-tracker.git
+cd learning-tracker
+npm install
